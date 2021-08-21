@@ -32,6 +32,7 @@ class _TextFormFieldContainerState extends State<TextFormFieldContainer> {
       ),
       child: Center(
         child: TextFormField(
+          cursorColor: Colors.black,
           style: TextStyle(
               color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
           controller: widget.controller,

@@ -40,9 +40,11 @@ class _HomePageState extends State<HomePage> {
     final _mediaQuery = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-//        backgroundColor: Color(0xff923FE2),
         centerTitle: true,
-        title: Image.asset('assets/hng.png', height: 60),
+        title: GestureDetector(
+          onTap: () => _launchURL(hngURL),
+          child: Image.asset('assets/hng.png', height: 55),
+        ),
         shape: CurvedShape(_mediaQuery.height * 0.2),
       ),
       backgroundColor: Colors.white,
@@ -67,21 +69,10 @@ class _HomePageState extends State<HomePage> {
             RoundedButton(
               onPressed: () {
                 if (controller.text.isNotEmpty) {
-//                  showDialog(
-//                    context: context,
-//                    builder: (context) => AlertDialog(
-//                      backgroundColor: Color(0xff923FE2),
-//                      content: Text(
-//                        controller.text,
-//                        textAlign: TextAlign.center,
-//                        style: TextStyle(
-//                            color: Colors.black, fontWeight: FontWeight.bold),
-//                      ),
-//                    ),
-//                  );
                   var snackBar = SnackBar(
                     behavior: SnackBarBehavior.floating,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20)),
                     content: Text(
                       controller.text,
                       textAlign: TextAlign.center,
@@ -93,6 +84,24 @@ class _HomePageState extends State<HomePage> {
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
                 }
               },
+            ),
+            SizedBox(height: 100),
+            Row(
+              children: [
+                Expanded(
+                  child: GestureDetector(
+                      onTap: () => _launchURL(i4gURL),
+                      child: Image.asset('assets/i4g.png', height: 40)),
+                ),
+                SizedBox(
+                  width: 25,
+                ),
+                Expanded(
+                  child: GestureDetector(
+                      onTap: () => _launchURL(zuriURL),
+                      child: Image.asset('assets/zuri.png', height: 40)),
+                )
+              ],
             )
           ],
         ),
