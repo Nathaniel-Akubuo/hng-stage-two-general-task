@@ -27,13 +27,13 @@ class _TextFormFieldContainerState extends State<TextFormFieldContainer> {
       padding: EdgeInsets.only(left: 10),
       height: 60,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20), color: Colors.white),
+        borderRadius: BorderRadius.circular(20),
+        color: Color(0xff009688),
+      ),
       child: Center(
         child: TextFormField(
           style: TextStyle(
-              color: Colors.black,
-              fontSize: 18,
-              fontWeight: FontWeight.bold),
+              color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
           controller: widget.controller,
           textInputAction: TextInputAction.send,
           decoration: InputDecoration(
