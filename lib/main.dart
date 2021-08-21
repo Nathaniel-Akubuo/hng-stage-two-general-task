@@ -53,17 +53,9 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             SizedBox(height: _mediaQuery.height * 0.3),
-            Form(
-              key: formKey,
-              child: TextFormFieldContainer(
-                controller: controller,
-                labelText: 'Enter an input',
-                validator: (String value) {
-                  if (value.isEmpty) {
-                    return '';
-                  }
-                },
-              ),
+            TextFormFieldContainer(
+              controller: controller,
+              labelText: 'Enter an input'
             ),
             SizedBox(height: _mediaQuery.height * 0.1),
             RoundedButton(
